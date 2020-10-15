@@ -3,6 +3,7 @@ package me.ayl.imposters.lobby.listener;
 import me.ayl.imposters.lobby.Lobby;
 import me.ayl.imposters.profile.PlayerProfile;
 import me.ayl.imposters.profile.PlayerProfileHandler;
+import me.ayl.imposters.profile.PlayerState;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -10,7 +11,7 @@ import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 
-public class LobbyListeners implements Listener {
+public final class LobbyListeners implements Listener {
 
     @EventHandler
     public void onPlayerJoinEvent(PlayerJoinEvent event) {
@@ -23,12 +24,10 @@ public class LobbyListeners implements Listener {
         PlayerProfile profile = PlayerProfileHandler.INSTANCE.get(player);
 
         if (event.getAction() == Action.RIGHT_CLICK_AIR || event.getAction() == Action.RIGHT_CLICK_BLOCK) {
-            switch (profile.getState()) {
-                case LOBBY:
-                    int slot = player.getInventory().getHeldItemSlot();
-                    Lobby.INSTANCE.getInventory()[slot].getListener().onPlayerInteractEvent(event);
+            if (profile.getState() == PlayerState.LOBBY) {
+                int slot = player.getInventory().getHeldItemSlot();
+                Lobby.INSTANCE.getInventory()[slot].getListener().onPlayerInteractEvent(event);
             }
-
         }
     }
 }

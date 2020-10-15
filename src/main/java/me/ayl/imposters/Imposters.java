@@ -10,7 +10,7 @@ import java.util.Arrays;
 /**
  * @author shyon
  */
-public class Imposters extends JavaPlugin {
+public final class Imposters extends JavaPlugin {
 
     @Getter private static Imposters instance;
 
