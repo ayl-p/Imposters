@@ -1,2 +1,7 @@
-package me.ayl.imposters.lobby.profile;public class PlayerState {
+package me.ayl.imposters.profile;
+
+public enum PlayerState {
+    LOBBY,
+    QUEUING,
+    PLAYING;
 }

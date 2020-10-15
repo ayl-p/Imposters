@@ -1,2 +1,9 @@
-package me.ayl.imposters.lobby.profile;public class PlayerProfile {
+package me.ayl.imposters.profile;
+
+import lombok.Data;
+
+@Data
+public class PlayerProfile {
+
+    private PlayerState state = PlayerState.LOBBY;
 }
