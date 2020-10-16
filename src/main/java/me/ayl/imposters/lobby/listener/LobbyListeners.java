@@ -5,6 +5,7 @@ import me.ayl.imposters.lobby.handler.LobbyHandler;
 import me.ayl.imposters.profile.Profile;
 import me.ayl.imposters.profile.handler.ProfileHandler;
 import me.ayl.imposters.profile.ProfileState;
+import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -30,8 +31,9 @@ public final class LobbyListeners implements Listener {
 
         if (event.getAction() == Action.RIGHT_CLICK_AIR || event.getAction() == Action.RIGHT_CLICK_BLOCK) {
             if (profile.getState() == ProfileState.LOBBY) {
-                int slot = player.getInventory().getHeldItemSlot();
-                lobbyHandler.getInventory()[slot].getListener().onPlayerInteractEvent(event);
+                if (player.getItemInHand().getType() != Material.AIR) {
+                    lobbyHandler.handleInteract(event);
+                }
             }
         }
     }
