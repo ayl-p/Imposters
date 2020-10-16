@@ -1,4 +1,4 @@
-package me.ayl.imposters.lobby;
+package me.ayl.imposters.lobby.handler;
 
 import lombok.Getter;
 import me.ayl.imposters.lobby.item.LobbyItem;
@@ -7,9 +7,7 @@ import org.bukkit.Material;
 import org.bukkit.entity.Player;
 
 @Getter
-public enum Lobby {
-
-    INSTANCE;
+public class LobbyHandler {
 
     private final LobbyItem[] inventory = {
             new LobbyItem(Material.SKELETON_SKULL)

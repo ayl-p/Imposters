@@ -1,4 +1,4 @@
-package me.ayl.imposters.game;
+package me.ayl.imposters.game.player;
 
 public enum Team {
     IMPOSTERS,

@@ -1,14 +1,13 @@
-package me.ayl.imposters.profile;
+package me.ayl.imposters.profile.handler;
 
+import me.ayl.imposters.profile.Profile;
 import org.bukkit.entity.Player;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
-public enum ProfileHandler {
-
-    INSTANCE;
+public class ProfileHandler {
 
     private final Map<UUID, Profile> profiles = new HashMap<>();
 

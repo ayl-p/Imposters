@@ -1,2 +1,8 @@
-package me.ayl.imposters.game.queue;public enum QueueHandler {
+package me.ayl.imposters.queue;
+
+public enum QueueHandler {
+
+    INSTANCE;
+
+
 }

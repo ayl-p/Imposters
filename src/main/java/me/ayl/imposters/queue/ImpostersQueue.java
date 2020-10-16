@@ -1,2 +1,4 @@
-package me.ayl.imposters.game.queue;public class ImpostersQueue {
+package me.ayl.imposters.queue;
+
+public class ImpostersQueue {
 }

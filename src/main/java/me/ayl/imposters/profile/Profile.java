@@ -2,8 +2,12 @@ package me.ayl.imposters.profile;
 
 import lombok.Data;
 
-@Data
-public final class PlayerProfile {
+import java.util.UUID;
 
-    private PlayerState state = PlayerState.LOBBY;
+@Data
+public final class Profile {
+
+    private final UUID uuid;
+
+    private ProfileState state = ProfileState.LOBBY;
 }

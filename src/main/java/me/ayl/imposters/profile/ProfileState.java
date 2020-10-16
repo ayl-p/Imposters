@@ -1,6 +1,6 @@
 package me.ayl.imposters.profile;
 
-public enum PlayerState {
+public enum ProfileState {
     LOBBY,
     QUEUING,
     PLAYING;
