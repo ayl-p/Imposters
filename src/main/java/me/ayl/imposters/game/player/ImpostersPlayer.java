@@ -5,6 +5,7 @@ import lombok.Data;
 @Data
 public class ImpostersPlayer {
 
-    private boolean dead = false;
-    private Team team = Team.INNOCENT;
+    private int kills;
+
+    private boolean dead = false, imposter = false;
 }
